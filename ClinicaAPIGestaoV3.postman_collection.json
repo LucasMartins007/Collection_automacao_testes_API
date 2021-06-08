@@ -37,6 +37,16 @@
 											"",
 											"const loginResponse = pm.response.json()",
 											"",
+											"var data1 = [true, false];",
+											"var data2 = [true, 123];",
+											"",
+											"pm.test('Schema is valid', function () {",
+											"    pm.expect(tv4.validate(data1, schema)).to.be.true;",
+											"    pm.expect(tv4.validate(data2, schema)).to.be.true;",
+											"});",
+											"",
+											"",
+											"",
 											"pm.test(\"Test data type of the response! \", () => {",
 											"    pm.expect(loginResponse).to.be.an(\"object\")",
 											"    pm.expect(loginResponse.username).to.be.a(\"string\")",
@@ -11988,7 +11998,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"{{$randomProductName}}\",\n    \"descricao\": \"{{$randomPhrase}}\",\n    \"categoria\": {\n        \"id\": \"{{:categoriaServicoId}}\"\n    },\n      \"produtoBase\":{\n        \"id\":\"{{:produtoBaseServicoId}}\"\n    },\n    \"valor\": {{$randomPrice}},\n    \"homecare\": {{$randomBoolean}},\n    \"unidadeMedida\": \"CENTIMETRO\",\n    \"tempoAtendimento\": 5,\n    \"exibePortal\": {{$randomBoolean}},\n    \"geraComissao\": {{$randomBoolean}},\n    \"valorComissao\": {{$randomPrice}},\n    \"tipo\": \"SERVICO\",\n    \"ativo\": true\n}"
+									"raw": "{\n    \"nome\": \"teste\",\n    \"descricao\": \"teste\",\n    \"categoria\": {\n        \"id\": \"1\"\n    },\n      \"produtoBase\":{\n        \"id\":\"9\"\n    },\n    \"valor\": {{$randomPrice}},\n    \"homecare\": {{$randomBoolean}},\n    \"unidadeMedida\": \"CENTIMETRO\",\n    \"tempoAtendimento\": 5,\n    \"exibePortal\": {{$randomBoolean}},\n    \"geraComissao\": {{$randomBoolean}},\n    \"valorComissao\": {{$randomPrice}},\n    \"tipo\": \"SERVICO\",\n    \"ativo\": true\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/produto",
@@ -12264,7 +12274,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"{{$randomProductName}}\",\n    \"descricao\": \"{{$randomPhrase}}\",\n    \"categoria\": {\n        \"id\": \"{{:categoriaProdutoId}}\"\n    },\n    \"valor\": {{$randomPrice}},\n    \"homecare\": {{$randomBoolean}},\n    \"unidadeMedida\": \"CENTIMETRO\",\n    \"tempoAtendimento\": 12,\n    \"exibePortal\": {{$randomBoolean}},\n    \"geraComissao\": {{$randomBoolean}},\n    \"valorComissao\": {{$randomPrice}},\n    \"tipo\": \"PRODUTO\",\n    \"ativo\": {{$randomBoolean}}\n}"
+									"raw": "{\n    \"nome\": \"{{$randomProductName}}\",\n    \"descricao\": \"{{$randomProductName}}\",\n    \"categoria\": {\n        \"id\": \"{{:categoriaProdutoId}}\"\n    },\n    \"valor\": {{$randomPrice}},\n    \"homecare\": true,\n    \"unidadeMedida\": \"CENTIMETRO\",\n    \"tempoAtendimento\": 12,\n    \"exibePortal\": {{$randomBoolean}},\n    \"geraComissao\": {{$randomBoolean}},\n    \"valorComissao\": {{$randomPrice}},\n    \"tipo\": \"PRODUTO\",\n    \"ativo\": {{$randomBoolean}}\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/produto",
@@ -25617,7 +25627,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "//{\n//  \"midiaSocial\": \"FACEBOOK\",\n//  \"url\": \"string\"\n//}"
+											"raw": "{\n  \"midiaSocial\": \"FACEBOOK\",\n  \"url\": \"string\"\n}"
 										},
 										"url": {
 											"raw": "{{baseUrl}}/api/v1/pessoa/{{:pessoaId}}/midiaSocial",
@@ -26237,7 +26247,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "//{\n//    \"midiaSocial\": \"FACEBOOK\",\n//    \"url\": \"string\"\n//}"
+											"raw": "{\n    \"midiaSocial\": \"FACEBOOK\",\n    \"url\": \"string\"\n}"
 										},
 										"url": {
 											"raw": "{{baseUrl}}/api/v1/pessoa/{{:pessoaId}}/midiaSocial/{{:pessoaMidiaSocialId}}",
