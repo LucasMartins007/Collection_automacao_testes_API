@@ -106,6 +106,13 @@
 											"}",
 											"",
 											"pm.globals.set(\":cpf\", gerarCpf());",
+											"",
+											"function getTelefone(){",
+											"    return Math.floor(Math.random() * 99999999999 + 10000000000)",
+											"}",
+											"",
+											"pm.globals.set(\":telefone\", getTelefone());",
+											"",
 											"}"
 										],
 										"type": "text/javascript"
@@ -12207,7 +12214,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"{{$randomProductName}}\",\n    \"descricao\": \"{{$randomPhrase}}\",\n    \"categoria\": {\n        \"id\": \"{{:categoriaProdutoId}}\"\n    },\n    \"valor\": {{$randomPrice}},\n    \"homecare\": {{$randomBoolean}},\n    \"unidadeMedida\": \"CENTIMETRO\",\n    \"tempoAtendimento\": 12,\n    \"exibePortal\": {{$randomBoolean}},\n    \"geraComissao\": {{$randomBoolean}},\n    \"valorComissao\": {{$randomPrice}},\n    \"tipo\": \"PRODUTO\",\n    \"ativo\": {{$randomBoolean}}\n}"
+									"raw": "{\n            \"nome\": \"teste{{$randomProduct}}\",\n            \"descricao\": \"teste_{{$randomLastName}}\",\n            \"categoria\": {\n                \"id\": \"{{:categoriaProdutoId}}\"\n            },\n            \"valor\": {{$randomPrice}},\n            \"homecare\": false,\n            \"tempoAtendimento\": 10,\n            \"exibePortal\": false,\n            \"unidadeMedida\": \"CENTIMETRO\",\n            \"geraComissao\": true,\n            \"valorComissao\": {{$randomPrice}},\n            \"tipo\": \"PRODUTO\",\n            \"ativo\": true\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/produto",
@@ -18850,7 +18857,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"ativo\": true,\n  \"nome\": \"teste_{{$randomFullName}}\"\n}"
+									"raw": "{\n  \"ativo\": true,\n  \"nome\": \"teste_{{$randomLastName}}\"\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/expediente",
@@ -21500,7 +21507,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"TestePostamn\",\n    \"email\": \"teste.{{$randomExampleEmail}}\",\n    \"telefone\": \"45897897987\",\n    \"cpf\": \"{{:cpf}}\",\n    \"expediente\": {\n        \"id\": \"{{:expedienteProfissionalAgendaId}}\"\n    },\n    \"usuario\": {\n        \"id\": 67\n    },\n    \"facebook\": \"{{$randomUrl}}\",\n    \"instagram\": \"{{$randomUrl}}\",\n    \"multiploAgendamento\": true,\n    \"possuiAgenda\": true,\n    \"possuiAgendaOnline\": true,\n    \"servicosProfissional\": [\n        {\n            \"servico\": {\n                \"id\": \"{{:servicoAgendaId}}\"\n            }\n        }\n    ]\n}"
+									"raw": "{\n    \"nome\": \"teste_postamn\",\n    \"email\": \"teste.{{$randomExampleEmail}}\",\n    \"telefone\": \"45897897987\",\n    \"cpf\": \"{{:cpf}}\",\n    \"expediente\": {\n        \"id\": \"{{:expedienteProfissionalAgendaId}}\"\n    },\n    \"usuario\": {\n        \"id\": 67\n    },\n    \"facebook\": \"{{$randomUrl}}\",\n    \"instagram\": \"{{$randomUrl}}\",\n    \"multiploAgendamento\": true,\n    \"possuiAgenda\": true,\n    \"possuiAgendaOnline\": true,\n    \"servicosProfissional\": [\n        {\n            \"servico\": {\n                \"id\": \"{{:servicoAgendaId}}\"\n            }\n        }\n    ]\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/profissional",
@@ -24515,7 +24522,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"nome\": \"tester\",\n    \"email\": \"{{$randomExampleEmail}}\",\n    \"observacao\": \"string\",\n    \"ativo\": true,\n    \"telefone\": \"99999999999\",\n    \"tipo\": \"FISICA\",\n    \"atuacao\": \"AMBOS\",\n    \"pessoaFisica\": {\n        \"id\": 445\n    }\n}"
+									"raw": "{\n    \"nome\": \"teste_{{$randomFirstName}}\",\n    \"email\": \"teste_{{$randomExampleEmail}}\",\n    \"observacao\": \"teste_{{$randomPhrase}}\",\n    \"ativo\": true,\n    \"telefone\": \"99999999999\",\n    \"tipo\": \"FISICA\",\n    \"atuacao\": \"AMBOS\",\n    \"pessoaFisica\": {\n        \"id\": 445\n    }\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/pessoa",
@@ -28276,7 +28283,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n    \"dataInicio\": \"{{$isoTimestamp}}\",\n    \"dataFim\": \"{{$isoTimestamp}}\",\n    \"observacao\": \"teste_confirmacao\",\n    \"tempoAtendimento\": 25\n}"
+									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n    \"dataInicio\": \"2021-06-12T01:00:00\",\n    \"dataFim\": \"2021-06-12T01:10:00\",\n    \"observacao\": \"teste_confirmacao\",\n    \"tempoAtendimento\": 25\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/agenda?dataFim=2020-12-16&dataInicio=2020-12-16T14:00:00",
@@ -28533,7 +28540,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n    \"dataInicio\": \"{{$isoTimestamp}}\",\n    \"dataFim\": \"{{$isoTimestamp}}\",\n    \"observacao\": \"teste_cancelamento\",\n    \"tempoAtendimento\": 25\n}"
+									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n     \"dataInicio\": \"2021-06-12T02:00:00\",\n    \"dataFim\": \"2021-06-12T02:10:00\",\n    \"observacao\": \"teste_cancelamento\",\n    \"tempoAtendimento\": 25\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/agenda?dataFim=2020-12-16&dataInicio=2020-12-16T14:00:00",
@@ -30273,7 +30280,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n    \"dataInicio\": \"{{$isoTimestamp}}\",\n    \"dataFim\": \"{{$isoTimestamp}}\",\n    \"tempoAtendimento\": 25\n}"
+									"raw": "{\n    \"pessoa\": {\n        \"id\": \"{{:pessoaId}}\"\n    },\n    \"profissional\": {\n        \"id\": \"{{:profissionalAgendaId}}\"\n    },\n    \"produto\": {\n        \"id\": \"{{:produtoAgendaId}}\"\n    },\n    \"dataInicio\": \"2021-06-11T01:00:00\",\n    \"dataFim\": \"2021-06-11T01:10:00\",\n    \"tempoAtendimento\": 25\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/agenda/{{:agendamentoConfirmadoId}}",
@@ -34068,14 +34075,13 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"pessoa\": {\n        \"id\": \"78\"\n    },\n    \"valor\": 1.00,\n    \"desconto\": 0.00,\n    \"acrescimo\": 0.00,\n    \"dataInclusao\": \"2020-08-28T08:08:52\"\n}"
+									"raw": "{\n    \"pessoa\": {\n        \"id\": \"78\"\n    },\n    \"valor\": 100.00,\n    \"desconto\": 0.00,\n    \"acrescimo\": 0.00,\n    \"dataInclusao\": \"2020-08-28T08:08:52\"\n}"
 								},
 								"url": {
-									"raw": "localhost:7090/api/v1/pedido/{{:pedidoId}}/finalizar",
+									"raw": "{{baseUrl}}/api/v1/pedido/{{:pedidoId}}/finalizar",
 									"host": [
-										"localhost"
+										"{{baseUrl}}"
 									],
-									"port": "7090",
 									"path": [
 										"api",
 										"v1",
@@ -35680,7 +35686,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"profissional\": {\n        \"id\": \"{{:profissionalId}}\"\n    },\n    \"item\": {\n        \"id\": \"{{:itemId}}\"\n    },\n    \"dataInclusao\": \"{{$isoTimestamp}}\",\n    \"percentualComissao\": {{$randomPrice}},\n    \"origemComissao\": \"PRODUTO\",\n    \"valor\": {{$randomPrice}}\n}"
+									"raw": "{\n    \"profissional\": {\n        \"id\": \"{{:profissionalId}}\"\n    },\n    \"item\": {\n        \"id\": 29\n    },\n    \"dataInclusao\": \"{{$isoTimestamp}}\",\n    \"percentualComissao\": {{$randomPrice}},\n    \"origemComissao\": \"PRODUTO\",\n    \"valor\": {{$randomPrice}}\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/comissao",
@@ -36468,7 +36474,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "[\n    {\n        \"id\": 218,\n        \"profissional\": {\n            \"id\": 118\n        },\n        \"item\": {\n            \"id\": \"{{:itemId}}\"\n        },\n        \"dataInclusao\": \"2021-06-09T09:28:13\",\n        \"origemComissao\": \"SEM_ORIGEM\",\n        \"valor\": 940.15\n    }\n]"
+									"raw": "[\n    {\n        \"id\": 142,\n        \"profissional\": {\n            \"id\": 73\n        },\n        \"item\": {\n            \"id\": 29\n        },\n        \"dataInclusao\": \"{{$isoTimestamp}}\",\n        \"origemComissao\": \"SEM_ORIGEM\",\n        \"valor\": 940.15\n    }\n]"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/api/v1/comissao/recalcular",
